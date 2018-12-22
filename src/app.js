@@ -1,24 +1,21 @@
 import http from 'http'
 import mongoose from './services/mongoose'
 import express from './services/express'
-import api from './api'// default index.js
+import api from './api'
 
-const mongoUri = "mongodb://localhost:27017/Website";// connection string for mango db...
-const port = 3000;
+const mongoUri = "mongodb://localhost:27017/studentsdb";
+const port = 4000;
 
-const app = express('', api)// Routs include
-const server = http.createServer(app)// create server
+const app = express('', api)
+const server = http.createServer(app)
 
-mongoose.connect(mongoUri)// Connect mango db
-mongoose.Promise = Promise// It will Executes mango db
+mongoose.connect(mongoUri)
+mongoose.Promise = Promise
 
 setImmediate(() => {
-  server.listen(port, () => {// listeb the port 
-    console.log(`Express server listening ${port}`);
+  server.listen(port, () => {
+    console.log(`Express server listening to the port ${port}`);
   })
 })
 
 export default app
-
-
-//this is all about requesting 

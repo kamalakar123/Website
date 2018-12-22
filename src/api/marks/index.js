@@ -5,8 +5,7 @@ import {
   index,
   show,
   update,
-  destroy,
-  searchStudent
+  destroy
 } from './controller'
 
 const router = new Router()
@@ -15,13 +14,10 @@ router.post('/',create)
 
 router.put('/:id',update)
 
-router.get('/search', searchStudent)
-
 router.get('/', index)
 
 router.get('/:id', show)
 
 router.delete('/:id', destroy)
-
 
 export default router
