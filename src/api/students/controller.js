@@ -18,14 +18,6 @@ export const show = (req, res) =>
       res.send(result);
     }
   })
-  export const showduplicate = (req, res) =>
-  Students.findById(req.params.id, (err, result) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send(result);
-    }
-  })
 
 export const index = (req, res) =>
   Students.find({}, (err, students) => {
